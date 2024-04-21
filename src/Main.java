@@ -36,7 +36,6 @@ public class Main {
         } else {
             result = -1 + token ;
         }
-       //Replace(result);
 
         System.out.println(Replace(result));
     }
