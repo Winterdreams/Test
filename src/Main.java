@@ -2,10 +2,15 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        String str = "Hello World Pie";
+        int maxcount = 0;
+        var maxword = "";
+        var result = "";
 
+        String str = "Hello World Pie";
+        String token = "0t8kbToken";
 
         String[] words = str.split("\\s+");
+
 
         for (String word : words) {
             int count = 0;
@@ -19,10 +24,36 @@ public class Main {
                         charCount.put(word.charAt(j), 1);
                     }
                 }
-                if (count >= 2){
-                    System.out.println(word);
+
+                if (count > maxcount){
+                    maxword = word;
+                    maxcount = count;
                 }
+
         }
+        if (maxcount > 1) {
+            result = maxword + token;
+        } else {
+            result = -1 + token ;
+        }
+       //Replace(result);
+
+        System.out.println(Replace(result));
+    }
+    public static String Replace(String result){
+        StringBuilder finalword = new StringBuilder();
+
+        for (int i = 0; i < result.length(); i++)
+        {
+            if (((i+1) % 4) == 0)
+            {
+                finalword.append("_");
+            }
+            else{
+                finalword.append(result.charAt(i));
+            }
+        }
+        return finalword.toString();
 
     }
 }
