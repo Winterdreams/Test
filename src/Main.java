@@ -11,7 +11,6 @@ public class Main {
 
         String[] words = str.split("\\s+");
 
-
         for (String word : words) {
             int count = 0;
 
@@ -45,12 +44,9 @@ public class Main {
         for (int i = 0; i < result.length(); i++)
         {
             if (((i+1) % 4) == 0)
-            {
                 finalword.append("_");
-            }
-            else{
+            else
                 finalword.append(result.charAt(i));
-            }
         }
         return finalword.toString();
 
